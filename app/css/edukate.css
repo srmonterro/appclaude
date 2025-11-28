@@ -1,0 +1,434 @@
+
+#diascheck .diascontrato { margin-top: 10px; }
+#diascheck .checkbox { display: inline-block !important; margin: 0px 0 0 5px; }
+
+#bg_calendario {
+    position:absolute;
+    z-index:0;
+    background:white;
+    display:block;
+    min-height:50%;
+    min-width:50%;
+    color:yellow;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+
+}
+
+.ikealogo {
+
+    background: url(../img/ikea_fondo25-50.png) no-repeat;
+    background-size: 76%;
+    background-position: 50% 25%;
+    /*background: rgb(0, 0, 0);*/
+    /*background: rgba(0, 0, 0, 0.6);*/
+
+}
+
+.spin {
+    -webkit-animation: spin .7s infinite linear;
+    -moz-animation: spin .7s infinite linear;
+    -o-animation: spin .7s infinite linear;
+    animation: spin .7s infinite linear;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#formulario.formularioevaluacion div[class*='col-md'] {
+    min-height: 45px;
+}
+
+.contratos div[class*='col-md'] {
+    margin-bottom: 2%;
+}
+
+.contratos fieldset {
+    margin: 2% 0;
+}
+
+.style-three {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    margin-bottom: 30px;
+}
+
+#registro table {
+    font-size: 12px;
+}
+
+.denominacion {
+    width: 870px;
+    margin: -10px auto;
+}
+
+.form-signin .btn-primary {
+	background-color: rgb(135,190,94);
+	border-color: rgb(135,190,94);
+}
+
+.form-signin .btn-primary:hover,
+.form-signin .btn-primary:focus,
+.form-signin .btn-primary:active,
+.form-signin .btn-primary.active,
+.form-signin .open .dropdown-toggle.btn-primary {
+  color: #e3dede;
+  background-color: rgb(135,190,94);
+  background-color: rgb(135,190,94);
+}
+
+#leerexcel,
+#subirexcel,
+#docublanco,
+#docurellena,
+#diploma,
+#subirexcel_fin,
+#leerexcel_fin,
+#cargardatos,
+#xmlfinpre,
+#subirpdfini,
+#subirpdffin,
+#mostrarpdfini,
+#mostrarpdffin,
+#subirpdfcues,
+#mostrarpdfcues,
+#leerexcel_privado,
+#docublanco_privado,
+#docurellena_privado,
+#diploma_privado,
+#btnsubidas_privado,
+#subirexcel_privado,
+#subirexcel_fin_privado,
+#leerexcel_fin_privado,
+#cargardatos_fin_privado,
+#diploma_nobonif,
+#diploma_bonif,
+#diploma_bonif_atras,
+#diploma_bonif_atrasp,
+#diploma_empresa,
+#diploma_empresap,
+#guiadelalumnom,
+#guiadelalumnogrupo,
+#guiadelalumnogrupo_privado,
+#justifcertsp,
+#justifcerts,
+#guiadidactica,
+#descargar_excel,
+#descargar_excelp,
+#descargar_excelfin,
+#descargar_excelfinp,
+#diplomasalumnogrupo,
+#diplomasalumnogrupop,
+#xmlfinprepost
+{
+	float:left;
+	margin-top: 1px;
+	margin-left: 10px;
+}
+
+.boton {
+    float:left;
+    margin-top: 1px;
+    margin-left: 10px;
+}
+
+.btnmatriculas {
+	text-align:center;
+	float:none;
+	min-height:70px;
+	margin-top: 15px;
+}
+
+#btnalumnose,
+#btnempresase,
+#btndocentese,
+#btnempresaseditar,
+#btndocenteseditar,
+#btndocenteseditarpre,
+#btndocenteseditarod {
+	display: none;
+	float: left;
+	margin-left: 5px;
+}
+
+.numalumnos,
+.numdocentes,
+.numempresas,
+.numdocentespre,
+.numdocentesod {
+    margin-left: 15px;
+    margin-right: 5px;
+	float: left;
+	margin-top: 7px;
+}
+
+.formulariomatricula .diasimp,
+.formulariomixto .diasimp,
+.formulariomatriculaini .diasimp {
+	margin-top: 30px;
+}
+
+.formulariomatricula .checkbox + .checkbox {
+	margin-top: 10px;
+}
+.formulariomixto .checkbox,
+.formulariopresencial .checkbox,
+.formulariomatricula .checkbox,
+.formulariomatriculaini .checkbox {
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 15px;
+	padding-left: 25px;
+}
+
+.etiqueta {
+	font-size:11px;
+	font-weight: bold;
+	color:#bbb;
+	margin-right: 5px;
+}
+.formulariofacturacion .col-md-6,
+.formulariofacturacion .col-md-4,
+.formulariofacturacion .col-md-2,
+.formulariofacturacion .col-md-3 {
+	min-height: 75px !important;
+}
+
+.formulariotutoria .col-md-5,
+.formulariotutoria .col-md-3,
+.formulariotutoria .col-md-1,
+.formulariotutoria .col-md-2,
+.formulariotutoria .col-md-4,
+.formulariotutoria .col-md-6 {
+    min-height: 75px !important;
+}
+
+#formulariocontacto .col-md-4 {
+	min-height: 75px;
+}
+
+#datoscostespre div.col-md-6,
+#datoscostespre div.col-md-3 {
+    min-height: 75px;
+}
+
+#datoscostesprep div.col-md-8,
+#datoscostesprep div.col-md-6,
+#datoscostesprep div.col-md-4 {
+    min-height: 75px;
+}
+
+#formulario .col-md-1,
+#formulario .col-md-2,
+#formulario .col-md-3,
+#formulario .col-md-4,
+#formulario .col-md-5,
+#formulario .col-md-6,
+#formulario .col-md-7,
+#formulario .col-md-8,
+#formulario .col-md-9,
+#formulario .col-md-10,
+#formulario .col-md-11,
+#formulario .col-md-12 {
+	min-height:90px;
+}
+
+.help-block {
+	font-size:12px;
+	margin-bottom: 0;
+}
+
+.cp,
+.gruposacciones {
+	overflow:visible;
+}
+
+#formulario .col-md-2 div.checkbox,
+#formulario .col-md-4 div.checkbox,
+#formulario .col-md-3 div.checkbox,
+#formulario .col-md-5 div.checkbox {
+	margin-top:30px;
+}
+
+#formulario label.checkbox {
+	margin-top: 0px;
+}
+
+.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
+.launcher .col-md-6 {
+	margin:auto;
+	text-align:center;
+	float:none;
+}
+.launcher {
+    margin-top: 5%;
+}
+.panel .col-md-6 {
+	float:left;
+}
+
+.formularioaccion .ta {
+	margin-bottom: 15px;
+	resize:vertical;
+}
+
+.recuadro {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+}
+.botones {
+	overflow: visible;
+	text-align: center;
+}
+.eliminara,
+.eliminard,
+.eliminaremp,
+.eliminarmprep,
+.eliminarmodp {
+	float : right;
+	margin-right: 15px;
+	margin-top:32px;
+}
+.formulariopresencial .eliminara {
+	margin-top:32px;
+}
+.btneliminar {
+	float: right;
+}
+.botoncuentas {
+	margin-top: 20px;
+}
+
+#cuentascotizacion .modal-body {
+	overflow: auto;
+}
+.cuadrocuentas {
+	margin-top: 24px;
+	margin-bottom: 5px;
+}
+
+
+/* LOGIN */
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 200px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    /*-moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;*/
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 760px) {
+    #formnotagastos a.boton {
+        margin: 10px 0 !important;
+        float: none !important;
+    }
+}
