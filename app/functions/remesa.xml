@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CstmrDrctDbtInitn>
+    <GrpHdr>
+      <MsgId>220220172136-e1082da84d67</MsgId>
+      <CreDtTm>2017-02-22T12:36:21+00:00</CreDtTm>
+      <NbOfTxs>34</NbOfTxs>
+      <CtrlSum>1093204</CtrlSum>
+      <InitgPty>
+        <Nm>ESCUELA SUPERIOR DE FORMACION Y CUALIFICACION, SLU</Nm>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>ESCUELA SUPERIOR DE FO-7734e9a710e4</PmtInfId>
+      <PmtMtd>DD</PmtMtd>
+      <BtchBookg>true</BtchBookg>
+      <NbOfTxs>34</NbOfTxs>
+      <CtrlSum>1093204</CtrlSum>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+        <LclInstrm>
+          <Cd>CORE</Cd>
+        </LclInstrm>
+        <SeqTp>RCUR</SeqTp>
+      </PmtTpInf>
+      <ReqdColltnDt>2017-03-01</ReqdColltnDt>
+      <Cdtr>
+        <Nm>ESCUELA SUPERIOR DE FORMACION Y CUALIFICACION, SLU</Nm>
+      </Cdtr>
+      <CdtrAcct>
+        <Id>
+          <IBAN>ES7201820772430101506704</IBAN>
+        </Id>
+      </CdtrAcct>
+      <CdtrAgt>
+        <FinInstnId>
+          <Othr>
+            <Id>NOTPROVIDED</Id>
+          </Othr>
+        </FinInstnId>
+      </CdtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+      <CdtrSchmeId>
+        <Nm>ESCUELA SUPERIOR DE FORMACION Y CUALIFICACION, SLU</Nm>
+        <Id>
+          <PrvtId>
+            <Othr>
+              <Id>ES06000B76567718</Id>
+              <SchmeNm>
+                <Prtry>SEPA</Prtry>
+              </SchmeNm>
+            </Othr>
+          </PrvtId>
+        </Id>
+      </CdtrSchmeId>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-7009cad3d75e</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">121762</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>877</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>ARA ASESORAMIENTO Y GESTIÓN, S.L.P.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES5320389003766000213548</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 877/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-294ba9b0205f</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>867</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>ATICA OCEANICA, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES4530760510912354547727</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 867/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-f2a62b232516</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">30000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>830</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>VENERYCAN, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES5221006732390200076128</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 830/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-d5788648a94a</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">42000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>821</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>VALLE CAFÉ, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES8900495784132716063474</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 821/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-b3e2ba8c3fa2</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>820</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>SEBASTIAN MIGUEL GONZALEZ FERRAZ</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES6921007114862200037958</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 820/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-e513f7695ced</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>811</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>MOISÉS VERA LÓPEZ</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES7114650400121800558368</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 811/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-9170db443e8b</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">30000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>802</MndtId>
+            <DtOfSgntr>2016-11-30</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>JUAN JULIO PADRÓN CASAÑAS</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES2100490347272290119220</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 802/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-2645cd0de97b</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>777</MndtId>
+            <DtOfSgntr>2016-11-29</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>ANA MARÍA ZEA FERNÁNDEZ</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES2721007105500200035370</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 777/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-dda860c77fa4</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">22500</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>776</MndtId>
+            <DtOfSgntr>2016-11-29</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>DRAGOVIP SL</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES7700751286850600095948</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 776/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-9f41a0324e17</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>768</MndtId>
+            <DtOfSgntr>2016-11-29</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>LAS VILLAS GOVI, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES7521006725100200095139</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 768/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-1e883a37d611</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">41600</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>749</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>APARTAMENTOS LOS TARAJALES, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES3821006756612200210998</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 749/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-e30fde957929</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">71942</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>748</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>GOMERA VERDE, S.A.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES1930760110411004399224</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 748/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-18cd46d7e589</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">10400</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>747</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>TRUJILLO GAMEZ, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES3001823030610201503401</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 747/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-2e9bf2d3a01b</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">83200</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>746</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>GOMERA VERDE, S.A.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES1930760110411004399224</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 746/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-08447577e884</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">20800</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>745</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>TRUJILLO GAMEZ, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES3001823030610201503401</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 745/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-29b1cbbff060</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">102400</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>744</MndtId>
+            <DtOfSgntr>2016-11-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>GOMERA VERDE, S.A.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES1930760110411004399224</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 744/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-5f445fddefc3</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>737</MndtId>
+            <DtOfSgntr>2016-11-25</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>INA MARIA STOHANZL GEB GASCH</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES8221007114872200046502</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 737/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-37b9d62d94b6</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">7500</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>735</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>INA MARIA STOHANZL GEB GASCH</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES8221007114872200046502</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 735/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-8485740c68c9</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>734</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>INNOVARESTALIA LANZAROTE, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES9201826360470201535515</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 734/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-f62041665d51</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">30000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>731</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>BLEND COFFEE ROASTERS, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES7601822931110201614733</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 731/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-ff5e803eb833</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>730</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>M CARMEN PEREZ PEREZ </Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES9421007102122200067148</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 730/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-81be056eb492</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">22500</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>729</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>SEBASTIAN ARROCHA AYUT</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES5521007121122200310564</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 729/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-ed6b943f11f5</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">42000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>722</MndtId>
+            <DtOfSgntr>2016-11-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>INVERSIONES HÍPICAS DE CANARIAS S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES0930760110422389618428</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 722/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-201017e8518b</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">23400</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>698</MndtId>
+            <DtOfSgntr>2016-11-23</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>TRANSPORTES BLUMENAU, S.L.</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES8301826131110101501636</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 698/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-f335872bd149</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">21500</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>692</MndtId>
+            <DtOfSgntr>2016-11-17</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>SALAZONES CAIROS,S.L.UNIPERSONAL</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES7101820772410101505947</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 692/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-9033754398f5</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">45000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>646</MndtId>
+            <DtOfSgntr>2016-10-31</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>ASOCIACIÓN PALMERA PARA LA PREVENCION Y TRATAMIENTOS DE TOXICOMANIA</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES1130760170842364367629</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 646/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-3d83f8edcc17</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>635</MndtId>
+            <DtOfSgntr>2016-10-31</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>DULCE DELEITE CB</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES5221001921110200137824</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 635/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-2b8cab78f498</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">45000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>620</MndtId>
+            <DtOfSgntr>2016-10-31</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>JOSE MANUEL ACOSTA LINARES</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES5221006747322200076623</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 620/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-9194956099ab</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">37500</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>609</MndtId>
+            <DtOfSgntr>2016-10-31</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>FABIAN GIL CAIROS</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES2321001776110200085747</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 609/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-d9f126c6d0f2</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>582</MndtId>
+            <DtOfSgntr>2016-10-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>MADERAS MARRERO SA</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES2321007061772200036736</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 582/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-e52aaab19d26</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">15000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>581</MndtId>
+            <DtOfSgntr>2016-10-28</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>MADERAS MARRERO SA</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES2321007061772200036736</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 581/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-3981cb7adba1</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">30000</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>553</MndtId>
+            <DtOfSgntr>2016-10-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>PANIFICADORA  TABURIENTE SL</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES4530760480661007612623</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 553/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-9ccbd1b20d1d</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">29400</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>552</MndtId>
+            <DtOfSgntr>2016-10-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>PANIFICADORA  TABURIENTE SL</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES4530760480661007612623</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 552/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+      <DrctDbtTxInf>
+        <PmtId>
+          <EndToEndId>ESCUELA SUPERIOR DE FO-19f8ee2576f7</EndToEndId>
+        </PmtId>
+        <InstdAmt Ccy="EUR">17800</InstdAmt>
+        <DrctDbtTx>
+          <MndtRltdInf>
+            <MndtId>550</MndtId>
+            <DtOfSgntr>2016-10-24</DtOfSgntr>
+          </MndtRltdInf>
+        </DrctDbtTx>
+        <DbtrAgt>
+          <FinInstnId>
+            <Othr>
+              <Id>NOTPROVIDED</Id>
+            </Othr>
+          </FinInstnId>
+        </DbtrAgt>
+        <Dbtr>
+          <Nm>ASOCIACIÓN PALMERA PARA LA PREVENCION Y TRATAMIENTOS DE TOXICOMANIA</Nm>
+        </Dbtr>
+        <DbtrAcct>
+          <Id>
+            <IBAN>ES1130760170842364367629</IBAN>
+          </Id>
+        </DbtrAcct>
+        <RmtInf>
+          <Ustrd>cobro fra. 550/ impartición formación</Ustrd>
+        </RmtInf>
+      </DrctDbtTxInf>
+    </PmtInf>
+  </CstmrDrctDbtInitn>
+</Document>
