@@ -1,0 +1,813 @@
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a class="navbar-brand" href="index.php?dashboard"><img src="img/logo.png" style="width: 70px; margin: 7px 15px;"></a>
+    </div>
+
+    <? $baseurl = $_SERVER['DOCUMENT_ROOT'].'/app';
+    //echo $baseurl;
+    include ('functions/funciones.php');
+
+    // arrayText($_SESSION);
+if ($gestion==2024){ ?>
+    <style>
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border-color: #e7e7e7;
+        background: #A9ED74;
+        
+       
+    }
+    </style>
+<?}
+
+    $tutor = strpos( $_SESSION['user'], 'tutor' );
+    $comercial = strpos( $_SESSION['user'], 'comercial' );
+    $ikea = strpos( $_SESSION['user'], 'ikea_' );
+    $unomina = strpos( $_SESSION['user'], 'n_' );
+    $externo = strpos( $_SESSION['user'], 'ext_');
+    $inspeccion = strpos( $_SESSION['user'], 'inspeccion');
+     // echo $externo;
+    $asociado = strpos( $_SESSION['user'], 'asociado');
+
+    if ( esExterno($_SESSION[user]) !== false ) {
+        $q = 'SELECT u.nombre, g.id, c.id as comercialid
+        FROM usuarios u, grupos_empresas g, comerciales c
+        WHERE u.user = "'.$_SESSION[user].'"
+        AND c.id = u.id_comercial
+        AND g.id_user = u.id';
+        // echo $q;
+        $q = mysqli_query($link, $q) or die("error:" .mysqli_error($link));
+
+        $row = mysqli_fetch_array($q);
+        $empresa = $row[nombre];
+        $_SESSION[empresa] = $empresa;
+        $_SESSION[comercial] = $row[comercialid];
+        $_SESSION[grupo] = $row[id];
+    }
+
+     //arrayText($_SESSION);
+
+    if ( $tutor === false || $_SESSION[user] == 'anjatutor' || $_SESSION[user] == 'rplasenciatutor' || $_SESSION[user] == 'cristina' || $_SESSION[user] == 'pablotutor' || $_SESSION[user] == 'cgutierreztutor' || $_SESSION[user] == 'ytejera' || $_SESSION[user] == 'ldeustutor') {
+
+    if ( $unomina === false && $inspeccion === false ) {
+
+        ?>
+
+
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+            <? if ( $_SESSION['user'] != 'calidad' && $_SESSION['user'] != 'procesos' ) { ?>
+
+            <? if ( $_SESSION['user'] != 'esther' && $_SESSION['user'] != 'gyanes' && $_SESSION['user'] != 'jony' && $_SESSION['user'] != 'rdiaz' && $_SESSION['user'] != 'jalves'  && $_SESSION['user'] != 'lsepulveda' && $_SESSION['user'] != 'susana' && $_SESSION['user'] != 'jalves' && $_SESSION['user'] != 'pamela' && $_SESSION['user'] != 'oscar' && $_SESSION['user'] != 'efrencomercial'  && $_SESSION[user] != 'documentacion' && $_SESSION['user'] != 'manolo' && $_SESSION['user'] != 'smatilla' && $_SESSION['user'] != 'cmunoz' && $_SESSION['user'] != 'margarita' && $ikea === false && $externo === false && $comercial === false && $asociado === false && $_SESSION[user] != 'rplasenciatutor' && $_SESSION[user] != 'pablotutor' && $_SESSION[user] != 'sdaluz' && $_SESSION['user'] != 'aplasencia' && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'aperez' && $_SESSION['user'] != 'ldeustutor' ) { ?>
+            <li <? if (($web == 'index') || ($web == 'index.php?alumnos'))
+            echo 'class="active"'; ?>>
+                <a href="index.php?alumnos">Alumnos</a>
+            </li> <? } ?>
+
+
+            <? if ( $_SESSION['user'] != 'esther' && $_SESSION['user'] != 'igonmar' && $_SESSION['user'] != 'ysuarez' && $_SESSION['user'] != 'lsepulveda'  && $_SESSION['user'] != 'susana' &&  $_SESSION['user'] != 'jony' && $_SESSION['user'] != 'rdiaz' && $_SESSION['user'] != 'jalves'  && $_SESSION['user'] != 'jalves' && $_SESSION['user'] != 'manolo' && $_SESSION['user'] != 'smatilla' && $_SESSION[user] != 'anjatutor' && $_SESSION['user'] != 'pamela' && $_SESSION['user'] != 'aplasencia' && $asociado === false && $ikea === false && $externo === false && $_SESSION[user] != 'rplasenciatutor' && $_SESSION[user] != 'pablotutor' && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'ctosco' && $_SESSION['user'] != 'asantana' && $_SESSION['user'] != 'ldeustutor' ) { ?>
+            <li <? if ( ($web == 'index.php?empresas') || ($web == 'index.php?comisionistas') || ($web == 'index.php?comerciales') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresas <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.php?empresas">Empresas</a></li>
+                    <? if ($_SESSION['user'] != 'cmunoz' && $_SESSION['user'] != 'margarita' && $_SESSION['user'] != 'aperez' && $comercial != true && $tutor != true ) { ?>
+                    <li><a href="index.php?comisionistas">Comisionistas</a></li><? } ?>
+                    <? if ( $_SESSION['user'] == 'root' ) { ?>
+                    <li><a href="index.php?comerciales">Alta Comerciales</a></li> <? } ?>
+                </ul>
+            </li> <? } ?>
+
+
+            
+
+            <? if ( $_SESSION['user'] != 'jony' && $_SESSION['user'] != 'rdiaz' && $_SESSION['user'] != 'jalves'  && $_SESSION['user'] != 'lsepulveda' && $_SESSION['user'] != 'susana' && $_SESSION['user'] != 'jalves' && $_SESSION['user'] != 'oscar' && $_SESSION['user'] != 'cmunoz' && $_SESSION['user'] != 'margarita' && $_SESSION['user'] != 'efrencomercial' && $_SESSION[user] != 'anjatutor' && $_SESSION['user'] != 'manolo' && $_SESSION[user] != 'documentacion' && $comercial != true && $ikea === false && $externo === false && $asociado === false && $_SESSION[user] != 'rplasenciatutor' && $_SESSION[user] != 'pablotutor' && $_SESSION['user'] != 'sdaluz' && $_SESSION['user'] != 'aplasencia' && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'aperez' && $_SESSION['user'] != 'ldeustutor' )   { ?>
+            <li <? if ($web == 'index.php?accion')
+                echo 'class="active"'; ?>>
+                <a href="index.php?accion">Acciones</a>
+            </li> <? } ?>
+
+            <? if ($_SESSION['user'] == 'root' || $_SESSION['user'] == 'susana' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'igonmar' || $_SESSION['user'] == 'ysuarez' || $_SESSION['user'] == 'ctosco' || $_SESSION['user'] == 'asantana' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'javier' || $_SESSION[user] == 'rplasenciatutor' || $_SESSION['user'] == 'pablotutor' || $_SESSION['user'] == 'gyanes' || $_SESSION['user'] == 'ytejera' || $_SESSION[user] == 'sdaluz' || $_SESSION[user] == 'rmedina' || $_SESSION[user] == 'ytejera') { ?>
+            <li <? if ($web == 'index.php?docente' || $web == 'index.php?seguimientodocente') echo 'class="dropdown active"';
+                    else 'class="dropdown"' ?>>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Docentes <b class="caret"></b></a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <? if ( $_SESSION['user'] != 'pablotutor' ) { ?>
+                    <li><a href="index.php?docente">Docentes</a></li>
+                    <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'igonmar' || $_SESSION['user'] == 'ysuarez' || $_SESSION['user'] == 'ctosco' || $_SESSION['user'] == 'asantana' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'pablotutor' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'sdaluz') { ?>
+                    <li><a href="index.php?seguimientodocente">Seguimiento Docentes</a></li><? } ?>
+                </ul>
+            </li> <? } ?>
+
+            <? if ( ( $_SESSION['user'] != 'esther' && $_SESSION['user'] != 'gyanes' && $_SESSION['user'] != 'jony' && $_SESSION['user'] != 'rdiaz' && $_SESSION['user'] != 'jalves'  && $_SESSION['user'] != 'lsepulveda' && $_SESSION['user'] != 'susana' && $_SESSION['user'] != 'jalves' && $_SESSION['user'] != 'manolo' && $_SESSION['user'] != 'smatilla' && $comercial != true && $ikea === false && $externo === false && $asociado === false && $_SESSION[user] != 'rplasenciatutor' && $_SESSION[user] != 'ldeustutor' && $_SESSION[user] != 'pablotutor' && $_SESSION['user'] != 'sdaluz' && $_SESSION['user'] != 'aplasencia') && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'aperez' || $_SESSION['user'] == 'efrencomercial' ) { ?>
+            <li <? if ( ($web == 'index.php?matricula') ||  ($web == 'index.php?tutorias') || ($web == 'index.php?seguimiento') || ($web == 'index.php?inspeccion') || ($web == 'index.php?form_matricula_ini') || ($web == 'index.php?form_matricula_doc') || ($web == 'index.php?form_matricula_fin') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Online/Distancia <b class="caret"></b></a>
+
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'javier' || $_SESSION[user] == 'rmedina' || $_SESSION[user] == 'ytejera' || $_SESSION[user] == 'amparo' || $_SESSION[user] == 'isabel') { ?>
+                   
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Matrículas Grupales</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?form_matricula_ini">Inicio</a></li>
+                            <li><a tabindex="-1" href="index.php?form_matricula_doc">Documentación</a></li>
+                            <li><a tabindex="-1" href="index.php?form_matricula_fin">Finalización</a></li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <? }
+                    if ( $_SESSION[user] != 'documentacion' ) { ?>
+                    <li><a href="index.php?tutorias">Tutorías</a></li> <? } ?>
+                    <? if (( $_SESSION['user'] != 'oscar' && $tutor != true && $_SESSION[user] != 'documentacion' && $_SESSION['user'] != 'pamela') || $_SESSION['user'] == 'efrencomercial') { ?>
+                    <li><a href="index.php?seguimiento">Seguimiento Tutorías</a></li> <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ytejera') { ?>
+                    <li><a href="index.php?inspeccion">Inspección</a></li> <? } ?>
+                </ul>
+            </li><? } ?>
+
+            <? if ($_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'jony' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'jony' || $_SESSION['user'] == 'rdiaz' || $_SESSION['user'] == 'igonmar' || $_SESSION['user'] == 'ysuarez' || $_SESSION['user'] == 'ctosco' || $_SESSION['user'] == 'asantana' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'icoello' || $_SESSION['user'] == 'aperez' || $_SESSION['user'] == 'amparo') { ?>
+            <li <? if ( ($web == 'index.php?mixto') || ($web == 'index.php?presencial') || ($web == 'index.php?presencial_doc') || ($web == 'index.php?presencial_fin') || ($web == 'index.php?inspeccionpm') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presencial/Mixto <b class="caret"></b></a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Presencial</a>
+                        <ul class="dropdown-menu">
+                          <? if ( $_SESSION['user'] != 'documentacion' ) { ?>
+                          <? if ( $_SESSION['user'] != 'rdiaz' ) { ?>
+                          <li><a href="index.php?presencial">Inicio</a></li><? } ?>
+                          <li><a href="index.php?presencial_doc">Documentación</a></li>
+                          <? if ( $_SESSION['user'] != 'jony' && $_SESSION['user'] != 'rdiaz' && $_SESSION['user'] != 'igonmar' && $_SESSION['user'] != 'ysuarez' && $_SESSION['user'] != 'ctosco' && $_SESSION['user'] != 'asantana' && $_SESSION['user'] != 'icoello') { ?>
+                          <li><a href="index.php?presencial_fin">Finalización</a></li><? } ?> <? } ?>
+                          <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'icoello' || $_SESSION['user'] == 'aperez' ) { ?>
+                          <li><a href="index.php?inspeccionpm">Inspección / Expediente Digital</a></li><? } ?>
+                        </ul>
+                    </li>
+                   
+                </ul>
+            </li> <? } ?>
+
+            <? if ( $_SESSION['user'] != 'esther' && $_SESSION['user'] != 'jalves'  && $_SESSION['user'] != 'lsepulveda' && $_SESSION['user'] != 'susana' && $_SESSION['user'] != 'jalves' && $_SESSION['user'] != 'manolo' && $_SESSION[user] != 'anjatutor' && $ikea === false && $asociado === false && $externo === false && $_SESSION[user] != 'rplasenciatutor' && $_SESSION[user] != 'pablotutor' && $_SESSION[user] != 'ldeustutor' ) { ?>
+            <li <? if ( ($web == 'index.php?seguimiento-comercial') || ($web == 'index.php?seguimiento-empresas') || ($web == 'index.php?registro-incendios') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Seguimiento <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <? if ( $_SESSION['user'] != 'icoello' ) { ?>
+                    <li><a href="index.php?calendarios">Calendarios</a></li><? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'jony' || $_SESSION['user'] == 'rdiaz' || $_SESSION['user'] == 'ytejera') { ?>
+                    <li><a href="index.php?form_tpc">TPC</a></li><? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'igonmar' || $_SESSION['user'] == 'ysuarez' || $_SESSION['user'] == 'ctosco' || $_SESSION['user'] == 'asantana' || $_SESSION['user'] == 'pamela' || $_SESSION['user'] == 'daniel' || $_SESSION[user] == 'margarita' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'jony' || $_SESSION['user'] == 'ytejera') { ?>
+                    <li><a href="index.php?peticiones-matriculas">Solicitudes</a></li><? } ?>
+                     <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'rmedina' ) { ?>
+                    <li><a href="index.php?seguimiento-gastos">Seguimiento Gastos</a></li>
+                    <li><a href="index.php?form_seguimiento-graficas">Seguimiento Estadísticas</a></li>
+                    <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'rmedina' ) { ?>
+                    <li><a href="index.php?seguimientodiplomas">Seguimiento Diplomas</a></li><? } ?>
+                     <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'jirigoyencomercial' ) { ?>
+                    <li><a href="index.php?seguimientoreportes">Seguimiento Reportes</a></li><? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ytejera') { ?>
+                    <li><a href="index.php?seguimiento-indicadores">Seguimiento Indicadores</a></li> <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'rmedina' || $comercial == true || $asociado !== false || $_SESSION['user'] == 'aplasencia' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'sdaluz') { ?>
+                    <li><a href="index.php?seguimiento-comercial">Seguimiento Comercial</a></li> <? } ?>
+
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION[user] == 'pamela' || $_SESSION['user'] == 'jirigoyencomercial' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'smatilla' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'gyanes' || $asociado !== false || $_SESSION['user'] == 'rmedina') { ?>
+                    <li><a href="index.php?seguimiento-empresas">Seguimiento Empresas</a></li>
+                    <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION[user] == 'pamela' || $_SESSION['user'] == 'jirigoyencomercial' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'smatilla' || $_SESSION['user'] == 'efrencomercial' || $asociado !== false || $_SESSION['user'] == 'rmedina') { ?>
+                    <li><a href="index.php?seguimiento-empresas-historico">Seguimiento Empresas Histórico</a></li>
+                    <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'sdaluz' ) { ?>
+                    <li><a href="index.php?seguimiento-facturacion">Seguimiento Facturación</a></li>
+                    <li><a href="index.php?seguimiento-facturacion-comercial">Seguimiento Facturación Comercial</a></li>
+                     <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'rmedina') { ?>
+                    <li><a href="index.php?seguimiento-comisionistas">Seguimiento Comisionistas</a></li>
+                    <li><a href="index.php?listado-comisionistas">Listado Comisionistas</a></li> <? } ?>
+                    <? if ( $_SESSION[user] == 'root' || $_SESSION[user] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ana' ) { ?>
+                    <li><a href="index.php?listado-rentabilidades">Listado Rentabilidades</a></li><? } ?>
+                    <? if ( $_SESSION[user] == 'root' || $_SESSION[user] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'isabel' || $_SESSION[user] == 'documentacion' || $_SESSION[user] == 'javier' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'icoello' || $_SESSION['user'] == 'aperez' ) { ?>
+                    <li><a href="index.php?listado-inspeccion">Listado Inspección</a></li><? } ?>
+                    <? if ( $_SESSION[user] == 'root' || $_SESSION[user] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ana' || $_SESSION[user] == 'cristina' || $_SESSION['user'] == 'ytejera') { ?>
+                    <li><a href="index.php?listado-cuestionarios">Listado Cuestionarios</a></li><? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'margarita' || ( $asociado === false && $_SESSION['user'] != 'smatilla' && $_SESSION['user'] != 'gyanes' && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'aperez' ) ) { ?>
+                    <li><a href="index.php?registro-incendios">Libro de Registros</a></li> <? } ?>
+                    <? if ( $_SESSION['user'] == 'root' || $_SESSION['user'] == 'jony' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'rdiaz' || $_SESSION['user'] == 'ytejera' ) { ?>
+                    <li><a href="index.php?listado-incidencias">Listado Incidencias</a></li>
+                    <li><a href="index.php?listado-logistica">Listado Logística</a></li><? } ?>
+
+                </ul>
+            </li> <? } ?>
+
+
+            <? if ( $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'ytejera' || $_SESSION['user'] == 'root' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'manolo' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'sdaluz' || $comercial !== false || $asociado !== false || $_SESSION['user'] == 'rmedina' ) { ?>
+            <li <? if ( ($web == 'index.php?facturacion') || ($web == 'index.php?form_control-facturacion') || ($web == 'index.php?form_acreedores') || ($web == 'index.php?form_apuntes-facturacion') || ($web == 'index.php?form_apuntes-facturacion') || ($web == 'index.php?form_control-facturacion-acre') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<b class="caret"></b></a>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+                <? if ( $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'cristina'  || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'root' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'isabel' || $_SESSION['user'] == 'amparo' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'manolo' || $_SESSION['user'] == 'oscar' || $_SESSION['user'] == 'cristina'  ||  $comercial !== false || $_SESSION['user'] == 'rmedina'  || $_SESSION['user'] == 'sdaluz') { ?>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">Clientes</a>
+                     <ul class="dropdown-menu">
+                        
+                        <? if ( $_SESSION['user'] == 'root' && $_SESSION['user'] != 'amparo' && $_SESSION['user'] != 'manolo' &&  $_SESSION['user'] != 'efrencomercial' && $_SESSION['user'] != 'oscar' && $comercial != true ) { ?>
+                        <li><a tabindex="-1" href="https://gestion.eduka-te.com/app/fac_simple/#" target="_blank">Factura Libre</a></li> <? } ?> 
+                        <? if ( $_SESSION['user'] == 'root' && $_SESSION['user'] != 'amparo' && $_SESSION['user'] != 'manolo' &&  $_SESSION['user'] != 'efrencomercial' && $_SESSION['user'] != 'oscar' && $comercial != true ) { ?>
+                        <li><a tabindex="-1" href="index.php?fac_libre">Factura Test</a></li> <? } ?>
+                        <? if ( $_SESSION['user'] != 'isabel' && $_SESSION['user'] != 'amparo' && $_SESSION['user'] != 'manolo' && $_SESSION['user'] != 'efrencomercial' && $_SESSION['user'] != 'oscar' && $comercial != true ) { ?>
+                        <li><a tabindex="-1" href="index.php?facturacion">Facturar Cursos</a></li> <? } ?>
+                        <li><a tabindex="-1" href="index.php?form_control-facturacion">Control Facturación</a></li>
+                        <? if ( $_SESSION['user'] != 'isabel' && $_SESSION['user'] != 'amparo' &&  $_SESSION['user'] != 'manolo' && $_SESSION['user'] != 'cristina' && $_SESSION['user'] != 'efrencomercial' && $_SESSION['user'] != 'oscar' && $comercial != true ) { ?>
+                        <li><a tabindex="-1" href="index.php?form_control-devoluciones">Control Devoluciones</a></li><? } ?>
+                    </ul>
+                </li>
+
+                <? } ?>
+
+                <? if ( $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'manolo' || $_SESSION['user'] == 'sdaluz' || $_SESSION['user'] == 'rmedina') { ?>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">Acreedores</a>
+                     <ul class="dropdown-menu">
+                        <? if ( $_SESSION['user'] != 'manolo' ) { ?>
+                        <li><a tabindex="-1" href="index.php?form_acreedores">Alta Acreedores</a></li>
+                        <li><a tabindex="-1" href="index.php?form_apuntes-facturacion">Facturas Acreedores</a></li><? } ?>
+                        <li><a tabindex="-1" href="index.php?form_control-facturacion-acre">Control Facturación</a></li>
+                    </ul>
+                </li><? } ?>
+
+                <? if ( $_SESSION['user'] != 'root' || $_SESSION['user'] == 'rmedina' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'manolo' || $_SESSION['user'] == 'daniel' || $asociado !== false || $_SESSION['user'] == 'sdaluz' || $_SESSION['user'] == 'rmedina' ) { ?>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">Personal</a>
+                     <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="index.php?form_usuarionomina">Usuarios</a></li>
+                        <li><a tabindex="-1" href="index.php?form_subirnomina">Nóminas</a></li>
+                        <li><a tabindex="-1" href="index.php?form_vacaciones">Vacaciones</a></li>
+                        <!-- <li><a tabindex="-1" href="index.php?form_control-facturacion-acre">Control Facturas</a></li> -->
+                    </ul>
+                </li><? } ?>
+
+                <? if ( $_SESSION['user'] != 'root' ) { ?>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#">Inventario</a>
+                     <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="index.php?form_inventario">Alta equipamiento</a></li>                        
+                    </ul>
+                </li><? } ?>
+
+                </ul>
+            </li>
+
+            <? } } ?>
+
+
+            <? if ( $_SESSION['user'] != 'root' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'calidad' || $_SESSION['user'] == 'procesos' || $_SESSION['user'] == 'ytejera') { ?>
+            <li <? if ( ($web == 'index.php?siscalidad') )
+            echo 'class="dropdown active"'; else echo 'class="dropdown"' ?>>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Calidad y Medio ambiente<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    <li><a href="index.php?siscalidad">Documentación</a></li>
+                    <? if ( $_SESSION[user] != 'procesos' && $_SESSION[user] != 'calidad' ) {  ?>
+                    <li><a href="index.php?registropolitica">Registro Envío Política</a></li><? } ?>
+                </ul>
+            </li> <? } ?>
+
+
+            <? if ( $_SESSION['user'] != 'root' || $externo !== false  ) { ?>
+            <li <? if ( ($web == 'index.php?acces_externo') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Externo <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+
+                    <?
+
+                    $montesano = 'Grupo Montesano';
+                    $meeting = 'Labranda';
+                    $lopesan = 'Lopesan';
+                    $ideco = 'IDECO';
+                    $cervecera = 'Cervecera';
+                    $seur = 'SEUR';
+                    $spar = 'SPAR';
+
+
+                    if ( $empresa == $montesano || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $montesano ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? } ?>
+
+
+                    <?
+
+                    if ( $empresa == $meeting || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $meeting ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? }
+
+                    if ( $empresa == $lopesan || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $lopesan ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? }
+
+                    if ( $empresa == $ideco || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $ideco ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? }
+
+
+                    if ( $empresa == $cervecera || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo "Compañía Cervecera de Canarias" ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? }
+
+                    if ( $empresa == $seur || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $seur ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? }
+
+                    if ( $empresa == $spar || $_SESSION[user] == 'root' ) {
+
+                    ?>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#"><? echo $spar ?></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="index.php?peticion-matricula">Solicitud de matrícula</a></li>
+                            <li><a tabindex="-1" href="index.php?empresas_externas">Información Empresas</a></li>
+                            <li><a tabindex="-1" href="index.php?seguimientoext">Seguimiento de Formación</a></li>
+                            <li><a tabindex="-1" href="index.php?facturacionext">Facturación</a></li>
+                            <!-- <li><a tabindex="-1" href="index.php?tutoriasext">Tutorías</a></li> -->
+                        </ul>
+                    </li>
+
+                    <? } ?>
+
+
+
+
+
+                </ul>
+            </li> <? } ?>
+
+
+
+            <? if ( $_SESSION['user'] == 'daniel' || $_SESSION['user'] == 'ana' || $_SESSION['user'] == 'root' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'margarita' || $_SESSION['user'] == 'javier' || $_SESSION['user'] == 'cristina' || $_SESSION['user'] == 'efrencomercial' || $_SESSION['user'] == 'cmunoz' || $_SESSION['user'] == 'igonmar' || $_SESSION['user'] == 'ysuarez' || $_SESSION['user'] == 'ctosco' || $_SESSION['user'] == 'asantana' || $ikea !== false && $_SESSION[anio] != 2014 || $_SESSION['user'] == 'rmedina') { ?>
+            <li style="display:none" <? if ( ($web == 'index.php?altaikea') || ($web == 'index.php?solicitudikea') || ($web == 'index.php?busqueda_seguimientoikea') )
+                    echo 'class="dropdown active"';
+                else
+                    echo 'class="dropdown"';
+                ?>>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img style="width: 60%" src="img/ikea_menu.png" /> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.php?solicitudikea">Solicitud de Cursos</a></li>
+                    <li><a href="index.php?empresasikea">Información Empresas</a></li>
+                    <!-- <li><a href="index.php?altaikea">Alta Tiendas</a></li> -->
+                    <li><a href="index.php?busqueda_seguimientoikea">Seguimiento Formación</a></li>
+                    <li><a href="index.php?form_listado-cuestionarioikea">Resultados Cuestionarios</a></li>
+                    <li><a href="index.php?form_docufinal">Documentación Presencial</a></li>
+                    <li><a href="index.php?form_docufinalonlinedist">Documentación Online/Distancia</a></li>
+                    <li><a href="index.php?form_contactosikea">Contactos IKEA</a></li>
+                </ul>
+            </li>
+            <? } ?>
+
+            <? if ( $tutor ) { ?>
+            <li>
+                <a href="index.php?tutorias">Tutorías</a>
+            </li>
+            <? } ?>
+
+            <? if ( $externo === false && $asociado === false && $_SESSION['user'] != 'aplasencia' && $_SESSION['user'] != 'icoello' && $_SESSION['user'] != 'aperez' & $_SESSION['user'] != 'root' ) { ?>
+            <li>
+                <a href="index.php?solicitudes_gastos">Gastos</a>
+            </li>
+            <? } ?>
+            </li>
+           
+            
+
+
+            <? } ?>
+
+
+        </ul>
+
+
+        <? }
+
+        // if ($_SESSION['anio'] == '') $anio == '2014'; else $anio = substr($_SESSION['anio'], 0,4);
+
+        // echo $externo;
+        if ( $_SESSION['user'] == 'root' )
+            echo '<p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user"></span>&nbsp;<a class="navbar-link" href="index.php?gestion-admin">'. $_SESSION['user']. '</a>&nbsp;&nbsp;<span class="glyphicon glyphicon-off"></span>&nbsp;<a href="#" id="logout" class="navbar-link">Salir</a></p>';
+        else if ( $externo !== false )
+            echo '<p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user"></span>&nbsp;<a class="navbar-link">'.$_SESSION['user'] .'</a>&nbsp;&nbsp; <span class="glyphicon glyphicon-off"></span>&nbsp;<a id="logout" class="navbar-link">Salir</a></p>';
+        else
+            echo '<p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user"></span>&nbsp;<a class="navbar-link" href="index.php?form_vernomina">'.$_SESSION['user'] .'</a>&nbsp;&nbsp; <span class="glyphicon glyphicon-off"></span>&nbsp;<a id="logout" class="navbar-link">Salir</a></p>';
+
+        if ( $_SESSION[user] == 'root' || $_SESSION[user] == 'daniel' || $_SESSION['user'] == 'rmedina' || $externo !== false ) {
+
+            echo '
+            <input type="hidden" id="aniovigente" value="'.$_SESSION[anio].'" />
+            <p id="anio" class="navbar-text navbar-right"><span class="glyphicon glyphicon-calendar"></span>&nbsp;
+
+            <select id="escogeanio">
+                <option>'.$_SESSION['anio'].'</option>';
+                echo '<option>'.($_SESSION['anio']-1).'</option>';
+                echo '<option>'.($_SESSION['anio']+1).'</option>';
+                
+
+
+            echo '</select></p>';
+        } else
+            echo '
+            <input type="hidden" id="aniovigente" value="'.$_SESSION[anio].'" />
+            <p id="anio" class="navbar-text navbar-right"><span class="glyphicon glyphicon-calendar"></span>&nbsp; '.$_SESSION[anio].'</p>';
+
+        echo '<input type="hidden" id="userapp" value="'.$_SESSION[user].'" />'
+
+        ?>
+    </div>
+</nav>
+
+<?
+
+include_once 'functions/funciones.php';
+
+ //print_r($_GET);
+
+if (isset($_GET['alumnos'])) {
+    include ('forms/form_alumno.php');
+} else if (isset($_GET['empresas'])) {
+    include ('forms/form_empresa.php');
+} else if (isset($_GET['form_empresaslopdf'])) {
+    include ('forms/form_empresaslopdf.php');
+}else if (isset($_GET['form_cuestionariolopdf'])) {
+    include ('forms/form_cuestionariolopdf.php');
+} else if (isset($_GET['exportar'])) {
+    include ('forms/form_prexml.php');
+} else if (isset($_GET['accion'])) {
+    include ('forms/form_accion.php');
+} else if (isset($_GET['form_control-facturacion-acciones-acre'])) {
+    include ('forms/form_control-facturacion-acciones-acre.php');
+} else if (isset($_GET['form_control-facturacion-acciones-cli'])) {
+    include ('forms/form_control-facturacion-acciones-cli.php');
+} else if (isset($_GET['docente'])) {
+    include ('forms/form_docente.php');
+} else if (isset($_GET['matricula'])) {
+    include ('forms/form_matricula.php');
+} else if (isset($_GET['presencial'])) {
+    include ('forms/form_presencial.php');
+} else if (isset($_GET['presencial_doc'])) {
+    include ('forms/form_presencial_doc.php');
+} else if (isset($_GET['presencial_docm'])) {
+    include ('forms/form_presencial_doc.php');
+} else if (isset($_GET['presencial_fin'])) {
+    include ('forms/form_presencial_fin.php');
+} else if (isset($_GET['mixto'])) {
+    include ('forms/form_mixto.php');
+} else if (isset($_GET['facturacion'])) {
+    include ('forms/form_facturacion.php');
+} else if (isset($_GET['fac_libre'])) {
+    include ('https://gestion.eduka-te.com/app/fac_simple/'); 
+    //include ('fac_simple/testeo.php');    
+} else if (isset($_GET['tutorias'])) {
+    include ('forms/form_tutorias.php');
+} else if (isset($_GET['seguimiento'])) {
+    include ('forms/form_seguimiento.php');
+} else if (isset($_GET['seguimiento-comercial'])) {
+    include ('forms/form_seguimiento-comercial.php');
+} else if (isset($_GET['seguimiento-facturacion'])) {
+    include ('forms/form_seguimiento-facturacion.php');
+} else if (isset($_GET['registro-incendios'])) {
+    include ('forms/form_registro-incendios.php');
+} else if (isset($_GET['inspeccion'])) {
+    include ('forms/form_inspeccion.php');
+} else if (isset($_GET['inspeccionpm'])) {
+    include ('forms/form_inspeccionpm.php');
+} else if (isset($_GET['form_matricula_ini'])) {
+    include ('forms/form_matricula_ini.php');
+} else if (isset($_GET['form_matricula_doc'])) {
+    include ('forms/form_matricula_doc.php');
+} else if (isset($_GET['form_matricula_fin'])) {
+    include ('forms/form_matricula_fin.php');
+} else if (isset($_GET['seguimiento-empresas'])) {
+    include ('forms/form_seguimiento-empresas.php');
+} else if (isset($_GET['seguimiento-empresas-historico'])) {
+    include ('forms/form_seguimiento-empresas-historico.php');
+} else if (isset($_GET['gestion-admin'])) {
+    include ('forms/form_gestion-admin.php');
+} else if (isset($_GET['comisionistas'])) {
+    include ('forms/form_comisionistas.php');
+} else if (isset($_GET['seguimiento-comisionistas'])) {
+    include ('forms/form_seguimiento-comisionistas.php');
+} else if (isset($_GET['listado-comisionistas'])) {
+    include ('forms/form_listado-comisionistas.php');
+} else if (isset($_GET['comerciales'])) {
+    include ('forms/form_comerciales.php');
+} else if (isset($_GET['listado-rentabilidades'])) {
+    include ('forms/form_listado-rentabilidades.php');
+} else if (isset($_GET['listado-inspeccion'])) {
+    include ('forms/form_listado-inspeccion.php');
+} else if (isset($_GET['listado-cuestionarios'])) {
+    include ('forms/form_listado-cuestionarios.php');
+} else if (isset($_GET['facturacion'])) {
+    include ('forms/form_facturacion.php');
+} else if (isset($_GET['factura-libre'])) {
+    include ('https://gestion.eduka-te.com/app/fac_simple/'); 
+    //include ('forms/form_factura_libre.php');
+} else if (isset($_GET['factura-libre2'])) {
+    include ('fac_simple/index.php?gestion='.$_SESSION['anio']);
+} else if (isset($_GET['form_acreedores'])) {
+    include ('forms/form_acreedores.php');
+} else if (isset($_GET['form_control-facturacion-acre'])) {
+    include ('forms/form_control-facturacion-acre.php');
+} else if (isset($_GET['form_apuntes-facturacion'])) {
+    include ('forms/form_apuntes-facturacion.php');
+} else if (isset($_GET['form_control-facturacion'])) {
+    include ('forms/form_control-facturacion.php');
+} else if (isset($_GET['form_control-devoluciones'])) {
+    include ('forms/form_control-devoluciones.php');
+} else if (isset($_GET['seguimientodocente'])) {
+    include ('forms/form_seguimiento-docentes.php');
+} else if (isset($_GET['solicitudikea'])) {
+    include ('forms/form_solicitudikea.php');
+} else if (isset($_GET['altaikea'])) {
+    include ('forms/form_altaikea.php');
+} else if (isset($_GET['busqueda_seguimientoikea'])) {
+    include ('forms/form_seguimientoikea.php');
+} else if (isset($_GET['reportecomercial'])) {
+    include ('forms/form_reportecomercial.php');
+} else if (isset($_GET['seguimientoreportes'])) {
+    include ('forms/form_seguimiento-reportes.php');
+} else if (isset($_GET['seguimiento-indicadores'])) {
+    include ('forms/form_seguimiento-indicadores.php');
+} else if (isset($_GET['peticion-matricula']) || isset($_GET['peticiones-matriculas']) ) {
+    include ('forms/form_peticion-matricula.php');
+} else if (isset($_GET['propuesta'])) {
+    include ('forms/form_propuesta.php');
+} else if (isset($_GET['seguimiento-comercialempresa'])) {
+    include ('forms/form_seguimiento-comercialempresa.php');
+} else if (isset($_GET['seguimientopropuestas'])) {
+    include ('forms/form_seguimientopropuestas.php');
+} else if (isset($_GET['seguimiento-peticion']) ) {
+    include ('forms/form_seguimientopeticiones.php');
+} else if (isset($_GET['form_docufinal'])) {
+    include ('forms/form_docufinal.php');
+} else if (isset($_GET['form_docufinalonlinedist'])) {
+    include ('forms/form_docufinalonlinedist.php');
+} else if (isset($_GET['form_listado-cuestionarioikea'])) {
+    include ('forms/form_listado-cuestionarioikea.php');
+} else if (isset($_GET['facturacion_ikea'])) {
+    include ('forms/form_facturacion_ikea.php');
+} else if (isset($_GET['form_mireporte'])) {
+    include ('forms/form_mireporte.php');
+} else if (isset($_GET['siscalidad'])) {
+    include ('sistema_calidad/index.html');
+} else if (isset($_GET['empresasikea'])) {
+    include ('forms/empresas_ikea.php');
+} else if (isset($_GET['registropolitica'])) {
+    include('forms/registropolitica.php');
+} else if (isset($_GET['form_subirnomina'])) {
+    include('forms/form_subirnomina.php');
+} else if (isset($_GET['form_usuarionomina'])) {
+    include('forms/form_usuarionomina.php');
+} else if (isset($_GET['form_vernomina'])) {
+    include('forms/form_vernomina.php');
+} else if (isset($_GET['seguimientodiplomas'])) {
+    include('forms/form_seguimientodiplomas.php');
+} else if (isset($_GET['form_contactosikea'])) {
+    include('forms/form_contactosikea.php');
+} else if (isset($_GET['form_seguimiento-graficas'])) {
+    include('forms/form_seguimiento-graficas.php');
+} else if (isset($_GET['empresas_externas'])) {
+    include('forms/empresas_externas.php');
+} else if (isset($_GET['seguimientoext'])) {
+    include('forms/form_seguimientoext.php');
+} else if (isset($_GET['calendarios'])) {
+    include('forms/form_calendarios.php');
+} else if (isset($_GET['facturacionext'])) {
+    include('forms/form_control-facturacionext.php');
+} else if (isset($_GET['tutoriasext'])) {
+    include('forms/form_tutoriasext.php');
+} else if (isset($_GET['listado-incidencias'])) {
+    include('forms/form_listado-incidencias.php');
+} else if (isset($_GET['listado-logistica'])) {
+    include('forms/form_listado-logistica.php');
+} else if (isset($_GET['form_vacaciones'])) {
+    include('forms/form_vacaciones.php');
+} else if (isset($_GET['solicitudes_gastos'])) {
+    include('forms/form_solicitudes_gastos.php');
+} else if (isset($_GET['form_tpc'])) {
+    include('forms/form_tpc.php');
+} else if (isset($_GET['form_essscan'])) {
+    include('forms/form_essscan.php');
+} else if (isset($_GET['form_sqlroot'])) {
+    include('forms/form_sqlroot.php');
+} else if (isset($_GET['seguimiento-facturacion-comercial'])) {
+    include('forms/form_seguimiento-facturacion-comercial.php');
+} else if (isset($_GET['seguimiento-gastos'])) {
+    include('forms/form_seguimiento-gastos.php');
+} else if (isset($_GET['form_inventario'])) {
+    include('forms/form_inventario.php');
+} else if ( strpos($_SESSION[user], 'tutor') !== false ) {
+    include('forms/form_tutorias.php');
+} else if (isset($_GET['dashboard'])) {
+    include('forms/dashboard.php');
+} else {
+    include('forms/dashboard.php');
+}
+
+?>
+
+<div class="modal fade" id="confirmar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3 class="modal-title" id="myModalLabel">Confirmación</h3>
+                </div>
+                <div class="modal-body">
+                    <br>
+                    <p style="text-align:center; font-size: 16px;">¿ Estás seguro de que quieres guardar los cambios ?</p>
+                    <p id="otromensaje" style="text-align:center; font-size: 16px;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="aceptacambios" type="button" class="btn btn-success" >
+                        Sí
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="modal fade" id="alerta-error" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3 class="modal-title" id="myModalLabel">Error</h3>
+                </div>
+                <div class="modal-body">
+                    <br>
+                    <p class="mensaje-error" style="text-align:center; font-size: 16px;">
+
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div  class="modal fade" id="mostrardatos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3 class="modal-title mostrartitulo" id="myModalLabel"></h3>
+                </div>
+                <div class="contenido">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button id="guardarcambios" type="button" class="btn btn-primary" data-dismiss="modal" style="display:none">
+                        Guardar
+                    </button>
+                    <button id="cerrar" type="button" class="btn btn-default" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div  class="modal fade" id="mostrardatosc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h3 class="modal-title mostrartitulo" id="myModalLabel"></h3>
+                </div>
+                <div class="contenido">
+
+                </div>
+
+                <div class="modal-footer">
+                    <button id="guardarcambios" type="button" class="btn btn-primary" data-dismiss="modal" style="display:none">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+</div>
